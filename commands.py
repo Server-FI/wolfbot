@@ -77,11 +77,12 @@ def coms(bot):
                     @bot.callback_query_handler(lambda call: call.data.startswith('Ответ_'))
                     async def handle_callback(call):
                         global answer
+                        info=await bot.get_chat(message.chat.id)
                         match call.data:
                             case 'Ответ_Да':
                                 if call.from_user.id==message.from_user.id:
                                     answer=1
-                                    await bot.restrict_chat_member(message.chat.id,message.from_user.id, can_send_messages=True,can_send_media_messages=True,can_send_polls=True,can_send_other_messages=True,can_add_web_page_previews=True)
+                                    await bot.restrict_chat_member(message.chat.id,message.from_user.id,permissions=info.permissions)
                                     role=await bot.get_chat_member(message.chat.id,message.from_user.id)
                                     add_user(message.from_user.id,message.from_user.username,message.chat.id,role)
                                     await bot.delete_message(message.chat.id, mes_test.message_id)
@@ -89,7 +90,7 @@ def coms(bot):
                             case 'Ответ_Нет':
                                 if call.from_user.id==message.from_user.id:
                                     answer=1
-                                    await bot.restrict_chat_member(message.chat.id,message.from_user.id, can_send_messages=True,can_send_media_messages=True,can_send_polls=True,can_send_other_messages=True,can_add_web_page_previews=True)
+                                    await bot.restrict_chat_member(message.chat.id,message.from_user.id,permissions=info.permissions)
                                     role=await bot.get_chat_member(message.chat.id,message.from_user.id)
                                     add_user(message.from_user.id,message.from_user.username,message.chat.id,role)
                                     await bot.delete_message(message.chat.id, mes_test.message_id)
@@ -261,10 +262,12 @@ def coms(bot):
                             mod3="Варн <u>юзернейм или ответ на сообщение</u>(Warn <u>юзернейм или ответ на сообщение</u>) - выдать предупреждение пользователю\nИзменить максимум <u>новое количество</u>(Change warns <u>новое количество</u>) - изменить максимум предупреждений необходимый для бана\n"
                             mod4="Задать правило <u>каждая строка и пункт правила писать на следующей строке</u>(Settings Rule <u>каждую строку и пункт правила писать на следующей строке</u>) - задаёт правила для чата\n"
                             mod5="Добавить правило  <u>новые правила без нумерации</u>(Add Rule  <u>новые правила без нумерации</u>) - добавляет новые пункты в правила чата. Для корректного внесения обязателен двойной пробел между командой и добавляемыми пунктами. Если добавляете больше одного пункта, то ставьте запятые между пунктами\nУдалить правило <u>номера пунктов</u>(Remove Rule <u>номера пунктов</u>) - удаляет пункты в правилах чата. Если удаляете больше одного пункта, то ставьте запятые между номерами\n"
+                            mod6="Снять запрет <u>юзернейм или ответ на сообщение</u>(Remove zapret <u>юзернейм или ответ на сообщение</u>) - снять мут с пользователя\nСнять предупреждение <u>юзернейм или ответ на сообщение</u>(Remove wurn <u>юзернейм или ответ на сообщение</u>) - снять варн с пользователя\nСнять блокировку <u>юзернейм или ответ на сообщение</u>(Remove block <u>юзернейм или ответ на сообщение</u>) - снять бан с пользователя(если пользователь добавлен в фильтр, то обращайтесь в поддержку бота)\n"
+                            mod7="Журнал <u>юзернейм или ответ на сообщение</u> (Journal <u>юзернейм или ответ на сообщение</u>) - выводит журнал со всеми наказаниями в данной группе. Если хотите просмотреть свой журнал,то просто напишите команду без ответа и юзернейма\n"
                             markup_mod=types.InlineKeyboardMarkup()
                             btn_mod1=types.InlineKeyboardButton(text="Назад",callback_data="Команды_Назад")
                             markup_mod.add(btn_mod1)
-                            await bot.edit_message_text(mod+mod1+mod2+mod3+mod4+mod5,message.chat.id,mes.id,reply_markup=markup_mod,parse_mode="HTML")
+                            await bot.edit_message_text(mod+mod1+mod2+mod3+mod4+mod5+mod6+mod7,message.chat.id,mes.id,reply_markup=markup_mod,parse_mode="HTML")
                         else:
                             pass
                     case "Команды_Гильдийские":
@@ -411,7 +414,6 @@ def coms(bot):
                                 await bot.send_message(message.chat.id,f"Вы успешно активировали промокод {promos} и получили {res[0]}",reply_to_message_id=message.id)
                                 write_log(f"Пользователь под id {message.from_user.id} активировал промокод {promos} и получил {res[0]}")
                     else:
-                        r=""
                         for i in res:
                             match i[1]:
                                 case True:
@@ -498,10 +500,10 @@ def coms(bot):
                                 case False:
                                     update_vip(message.from_user.id,i[2])
                                     write_log(f"Пользователь под id {message.from_user.id} активировал промокод {promos} и получил {i[0]}")
-                            r+=i[0]+","
                         await bot.send_message(message.chat.id,f"Вы успешно активировали промокод {promos} и получили {res[0][0]},{res[1][0]}",reply_to_message_id=message.id)
             case _:
                 use_promos=""
+                money=0
                 for i in promos.split(","):
                     res=search_promocode(i)
                     if res==None:
@@ -510,188 +512,113 @@ def coms(bot):
                         if len(res)==1 or len(res)==3:
                             match res[1]:
                                 case True:
-                                    groups=search_guid(message.from_user.id)
-                                    groups_split=groups.split("\n")
-                                    markup=types.InlineKeyboardMarkup()
-                                    if len(groups_split)==1:
-                                        btn1=types.InlineKeyboardButton(text=groups_split[0].split(" ")[0],callback_data=f"Деньги_{groups_split[0].split(" ")[0]}")
-                                        markup.add(btn1)
-                                        mes=await bot.send_message(message.chat.id,f"Вы получили {res[0]}. Выберите группу в которую будет зачислена награда:\n{groups}",reply_markup=markup,reply_to_message_id=message.id)
-                                        @bot.callback_query_handler(lambda call: call.data.startswith('Деньги_'))
-                                        async def handle_callback(call):
-                                            match call.data:
-                                                case btn1.callback_data:
-                                                    add_money(message.from_user.id,groups_split[0].split(" ")[0],res[2])
-                                                    await bot.delete_message(message.chat.id,mes.id)
-                                                    use_promos+=f"Вы успешно активировали промокод {i} и получили {res[0]}\n"
-                                                    write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {res[0]} на счёт в группе {groups_split[0].split(" ")[0]}")
-                                    elif len(groups_split)==2:
-                                        btn1=types.InlineKeyboardButton(text=groups_split[0].split(" ")[0],callback_data=f"Деньги_{groups_split[0].split(" ")[0]}")
-                                        btn2=types.InlineKeyboardButton(text=groups_split[1].split(" ")[0],callback_data=f"Деньги_{groups_split[1].split(" ")[0]}")
-                                        markup.add(btn1,btn2)
-                                        mes=await bot.send_message(message.chat.id,f"Вы получили {res[0]}. Выберите группу в которую будет зачислена награда:\n{groups}",reply_markup=markup,reply_to_message_id=message.id)
-                                        @bot.callback_query_handler(lambda call: call.data.startswith('Деньги_'))
-                                        async def handle_callback(call):
-                                            match call.data:
-                                                case btn1.callback_data:
-                                                    add_money(message.from_user.id,groups_split[0].split(" ")[0],res[2])
-                                                    await bot.delete_message(message.chat.id,mes.id)
-                                                    use_promos+=f"Вы успешно активировали промокод {i} и получили {res[0]}\n"
-                                                    write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {res[0]} на счёт в группе {groups_split[0].split(" ")[0]}")
-                                                case btn2.callback_data:
-                                                    add_money(message.from_user.id,groups_split[1].split(" ")[0],res[2])
-                                                    await bot.delete_message(message.chat.id,mes.id)
-                                                    use_promos+=f"Вы успешно активировали промокод {i} и получили {res[0]}\n"
-                                                    write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {res[0]} на счёт в группе {groups_split[1].split(" ")[0]}")
-                                    elif len(groups_split)==3:
-                                        btn1=types.InlineKeyboardButton(text=groups_split[0].split(" ")[0],callback_data=f"Деньги_{groups_split[0].split(" ")[0]}")
-                                        btn2=types.InlineKeyboardButton(text=groups_split[1].split(" ")[0],callback_data=f"Деньги_{groups_split[1].split(" ")[0]}")
-                                        btn3=types.InlineKeyboardButton(text=groups_split[2].split(" ")[0],callback_data=f"Деньги_{groups_split[2].split(" ")[0]}")
-                                        markup.add(btn1,btn2,btn3)
-                                        mes=await bot.send_message(message.chat.id,f"Вы получили {res[0]}. Выберите группу в которую будет зачислена награда:\n{groups}",reply_markup=markup,reply_to_message_id=message.id)
-                                        @bot.callback_query_handler(lambda call: call.data.startswith('Деньги_'))
-                                        async def handle_callback(call):
-                                            match call.data:
-                                                case btn1.callback_data:
-                                                    add_money(message.from_user.id,groups_split[0].split(" ")[0],res[2])
-                                                    await bot.delete_message(message.chat.id,mes.id)
-                                                    use_promos+=f"Вы успешно активировали промокод {i} и получили {res[0]}\n"
-                                                    write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {res[0]} на счёт в группе {groups_split[0].split(" ")[0]}")
-                                                case btn2.callback_data:
-                                                    add_money(message.from_user.id,groups_split[1].split(" ")[0],res[2])
-                                                    await bot.delete_message(message.chat.id,mes.id)
-                                                    use_promos+=f"Вы успешно активировали промокод {i} и получили {res[0]}\n"
-                                                    write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {res[0]} на счёт в группе {groups_split[1].split(" ")[0]}")
-                                                case btn3.callback_data:
-                                                    add_money(message.from_user.id,groups_split[2].split(" ")[0],res[2])
-                                                    await bot.delete_message(message.chat.id,mes.id)
-                                                    ause_promos+=f"Вы успешно активировали промокод {i} и получили {res[0]}\n"
-                                                    write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {res[0]} на счёт в группе {groups_split[2].split(" ")[0]}")
-                                    else:
-                                        btn1=types.InlineKeyboardButton(text=groups_split[0].split(" ")[0],callback_data=f"Деньги_{groups_split[0].split(" ")[0]}")
-                                        btn2=types.InlineKeyboardButton(text=groups_split[1].split(" ")[0],callback_data=f"Деньги_{groups_split[1].split(" ")[0]}")
-                                        btn3=types.InlineKeyboardButton(text=groups_split[2].split(" ")[0],callback_data=f"Деньги_{groups_split[2].split(" ")[0]}")
-                                        btn4=types.InlineKeyboardButton(text="Другая",callback_data="Деньги_Другая")
-                                        markup.add(btn1,btn2,btn3,btn4)
-                                        mes=await bot.send_message(message.chat.id,f"Вы получили {res[0]}. Выберите группу в которую будет зачислена награда:\n{groups}",reply_markup=markup,reply_to_message_id=message.id)
-                                        @bot.callback_query_handler(lambda call: call.data.startswith('Деньги_'))
-                                        async def handle_callback(call):
-                                            match call.data:
-                                                case btn1.callback_data:
-                                                    add_money(message.from_user.id,groups_split[0].split(" ")[0],res[2])
-                                                    await bot.delete_message(message.chat.id,mes.id)
-                                                    use_promos+=f"Вы успешно активировали промокод {i} и получили {res[0]}\n"
-                                                    write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {res[0]} на счёт в группе {groups_split[0].split(" ")[0]}")
-                                                case btn2.callback_data:
-                                                    add_money(message.from_user.id,groups_split[1].split(" ")[0],res[2])
-                                                    await bot.delete_message(message.chat.id,mes.id)
-                                                    use_promos+=f"Вы успешно активировали промокод {i} и получили {res[0]}\n"
-                                                    write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {res[0]} на счёт в группе {groups_split[1].split(" ")[0]}")
-                                                case btn3.callback_data:
-                                                    add_money(message.from_user.id,groups_split[2].split(" ")[0],res[2])
-                                                    await bot.delete_message(message.chat.id,mes.id)
-                                                    use_promos+=f"Вы успешно активировали промокод {i} и получили {res[0]}\n"
-                                                    write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {res[0]} на счёт в группе {groups_split[2].split(" ")[0]}")
-                                                case btn4.callback_data:
-                                                    await bot.edit_message_text("Введите номер группы в которую зачислите монеты",message.chat.id,mes.id)
-                                                    @bot.message_handler(chat_types=['private'])
-                                                    async def another_group(message):
-                                                        add_money(message.from_user.id,message.text,res[2])
-                                                        await bot.delete_message(message.chat.id,mes.id)
-                                                        use_promos+=f"Вы успешно активировали промокод {i} и получили {res[0]}\n"
-                                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {res[0]} на счёт в группе {message.text}")
+                                    money+=int(res[2])
+                                    use_promos+=f"Вы успешно активировали промокод {i} и получили {res[0]}\n"
                                 case False:
                                     update_vip(message.from_user.id,res[2])
                                     use_promos+=f"Вы успешно активировали промокод {i} и получили {res[0]}\n"
                                     write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {res[0]}")
                         else:
-                            r=""
                             for j in res:
                                 match j[1]:
                                     case True:
-                                        groups=search_guid(message.from_user.id)
-                                        groups_split=groups.split("\n")
-                                        markup=types.InlineKeyboardMarkup()
-                                        if len(groups_split)==1:
-                                            btn1=types.InlineKeyboardButton(text=groups_split[0].split(" ")[0],callback_data=f"Деньги_{groups_split[0].split(" ")[0]}")
-                                            markup.add(btn1)
-                                            mes=await bot.send_message(message.chat.id,f"Вы получили {j[0]}. Выберите группу в которую будет зачислена награда:\n{groups}",reply_markup=markup,reply_to_message_id=message.id)
-                                            @bot.callback_query_handler(lambda call: call.data.startswith('Деньги_'))
-                                            async def handle_callback(call):
-                                                match call.data:
-                                                    case btn1.callback_data:
-                                                        add_money(message.from_user.id,groups_split[0].split(" ")[0],j[2])
-                                                        await bot.delete_message(message.chat.id,mes.id)
-                                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {j[0]} на счёт в группе {groups_split[0].split(" ")[0]}")
-                                        elif len(groups_split)==2:
-                                            btn1=types.InlineKeyboardButton(text=groups_split[0].split(" ")[0],callback_data=f"Деньги_{groups_split[0].split(" ")[0]}")
-                                            btn2=types.InlineKeyboardButton(text=groups_split[1].split(" ")[0],callback_data=f"Деньги_{groups_split[1].split(" ")[0]}")
-                                            markup.add(btn1,btn2)
-                                            mes=await bot.send_message(message.chat.id,f"Вы получили {j[0]}. Выберите группу в которую будет зачислена награда:\n{groups}",reply_markup=markup,reply_to_message_id=message.id)
-                                            @bot.callback_query_handler(lambda call: call.data.startswith('Деньги_'))
-                                            async def handle_callback(call):
-                                                match call.data:
-                                                    case btn1.callback_data:
-                                                        add_money(message.from_user.id,groups_split[0].split(" ")[0],j[2])
-                                                        await bot.delete_message(message.chat.id,mes.id)
-                                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {j[0]} на счёт в группе {groups_split[0].split(" ")[0]}")
-                                                    case btn2.callback_data:
-                                                        add_money(message.from_user.id,groups_split[1].split(" ")[0],j[2])
-                                                        await bot.delete_message(message.chat.id,mes.id)
-                                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {j[0]} на счёт в группе {groups_split[1].split(" ")[0]}")
-                                        elif len(groups_split)==3:
-                                            btn1=types.InlineKeyboardButton(text=groups_split[0].split(" ")[0],callback_data=f"Деньги_{groups_split[0].split(" ")[0]}")
-                                            btn2=types.InlineKeyboardButton(text=groups_split[1].split(" ")[0],callback_data=f"Деньги_{groups_split[1].split(" ")[0]}")
-                                            btn3=types.InlineKeyboardButton(text=groups_split[2].split(" ")[0],callback_data=f"Деньги_{groups_split[2].split(" ")[0]}")
-                                            markup.add(btn1,btn2,btn3)
-                                            mes=await bot.send_message(message.chat.id,f"Вы получили {j[0]}. Выберите группу в которую будет зачислена награда:\n{groups}",reply_markup=markup,reply_to_message_id=message.id)
-                                            @bot.callback_query_handler(lambda call: call.data.startswith('Деньги_'))
-                                            async def handle_callback(call):
-                                                match call.data:
-                                                    case btn1.callback_data:
-                                                        add_money(message.from_user.id,groups_split[0].split(" ")[0],j[2])
-                                                        await bot.delete_message(message.chat.id,mes.id)
-                                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {j[0]} на счёт в группе {groups_split[0].split(" ")[0]}")
-                                                    case btn2.callback_data:
-                                                        add_money(message.from_user.id,groups_split[1].split(" ")[0],j[2])
-                                                        await bot.delete_message(message.chat.id,mes.id)
-                                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {j[0]} на счёт в группе {groups_split[1].split(" ")[0]}")
-                                                    case btn3.callback_data:
-                                                        add_money(message.from_user.id,groups_split[2].split(" ")[0],j[2])
-                                                        await bot.delete_message(message.chat.id,mes.id)
-                                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {j[0]} на счёт в группе {groups_split[2].split(" ")[0]}")
-                                        else:
-                                            btn1=types.InlineKeyboardButton(text=groups_split[0].split(" ")[0],callback_data=f"Деньги_{groups_split[0].split(" ")[0]}")
-                                            btn2=types.InlineKeyboardButton(text=groups_split[1].split(" ")[0],callback_data=f"Деньги_{groups_split[1].split(" ")[0]}")
-                                            btn3=types.InlineKeyboardButton(text=groups_split[2].split(" ")[0],callback_data=f"Деньги_{groups_split[2].split(" ")[0]}")
-                                            btn4=types.InlineKeyboardButton(text="Другая",callback_data="Деньги_Другая")
-                                            markup.add(btn1,btn2,btn3,btn4)
-                                            mes=await bot.send_message(message.chat.id,f"Вы получили {res[0]}. Выберите группу в которую будет зачислена награда:\n{groups}",reply_markup=markup,reply_to_message_id=message.id)
-                                            @bot.callback_query_handler(lambda call: call.data.startswith('Деньги_'))
-                                            async def handle_callback(call):
-                                                match call.data:
-                                                    case btn1.callback_data:
-                                                        add_money(message.from_user.id,groups_split[0].split(" ")[0],j[2])
-                                                        await bot.delete_message(message.chat.id,mes.id)
-                                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {j[0]} на счёт в группе {groups_split[0].split(" ")[0]}")
-                                                    case btn2.callback_data:
-                                                        add_money(message.from_user.id,groups_split[1].split(" ")[0],j[2])
-                                                        await bot.delete_message(message.chat.id,mes.id)
-                                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {j[0]} на счёт в группе {groups_split[1].split(" ")[0]}")
-                                                    case btn3.callback_data:
-                                                        add_money(message.from_user.id,groups_split[2].split(" ")[0],j[2])
-                                                        await bot.delete_message(message.chat.id,mes.id)
-                                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {j[0]} на счёт в группе {groups_split[2].split(" ")[0]}")
-                                                    case btn4.callback_data:
-                                                        await bot.edit_message_text("Введите номер группы в которую зачислите монеты",message.chat.id,mes.id)
-                                                        @bot.message_handler(chat_types=['private'])
-                                                        async def another_group(message):
-                                                            add_money(message.from_user.id,message.text,j[2])
-                                                            await bot.delete_message(message.chat.id,mes.id)
-                                                            write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {j[0]} на счёт в группе {message.text}")
+                                        money+=int(j[2])
+                                        use_promos+=f"Вы успешно активировали промокод {i} и получили {j[0]}\n"
                                     case False:
                                         update_vip(message.from_user.id,j[2])
+                                        use_promos+=f"Вы успешно активировали промокод {i} и получили {j[0]}\n"
                                         write_log(f"Пользователь под id {message.from_user.id} активировал промокод {i} и получил {j[0]}")
-                                r+=j[0]+","
-                            use_promos+=f"Вы успешно активировали промокод {i} и получили {r[0:-1]}"
-                await bot.send_message(message.chat.id,use_promos,reply_to_message_id=message.id)
+                match money:
+                    case 0:
+                        await bot.send_message(message.chat.id,use_promos,reply_to_message_id=message.id)
+                    case _:
+                        groups=search_guid(message.from_user.id)
+                        groups_split=groups.split("\n")
+                        markup=types.InlineKeyboardMarkup()
+                        if len(groups_split)==1:
+                            btn1=types.InlineKeyboardButton(text=groups_split[0].split(" ")[0],callback_data=f"Деньги_{groups_split[0].split(" ")[0]}")
+                            markup.add(btn1)
+                            mes=await bot.send_message(message.chat.id,f"Вы получили {money} монет. Выберите группу в которую будет зачислена награда:\n{groups}",reply_markup=markup,reply_to_message_id=message.id)
+                            @bot.callback_query_handler(lambda call: call.data.startswith('Деньги_'))
+                            async def handle_callback(call):
+                                match call.data:
+                                    case btn1.callback_data:
+                                        add_money(message.from_user.id,groups_split[0].split(" ")[0],money)
+                                        await bot.delete_message(message.chat.id,mes.id)
+                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокоды {promos} и получил {money} монет на счёт в группе {groups_split[0].split(" ")[0]}")
+                                        await bot.send_message(message.chat.id,use_promos,reply_to_message_id=message.id)
+                        elif len(groups_split)==2:
+                            btn1=types.InlineKeyboardButton(text=groups_split[0].split(" ")[0],callback_data=f"Деньги_{groups_split[0].split(" ")[0]}")
+                            btn2=types.InlineKeyboardButton(text=groups_split[1].split(" ")[0],callback_data=f"Деньги_{groups_split[1].split(" ")[0]}")
+                            markup.add(btn1,btn2)
+                            mes=await bot.send_message(message.chat.id,f"Вы получили {money} монет. Выберите группу в которую будет зачислена награда:\n{groups}",reply_markup=markup,reply_to_message_id=message.id)
+                            @bot.callback_query_handler(lambda call: call.data.startswith('Деньги_'))
+                            async def handle_callback(call):
+                                match call.data:
+                                    case btn1.callback_data:
+                                        add_money(message.from_user.id,groups_split[0].split(" ")[0],money)
+                                        await bot.delete_message(message.chat.id,mes.id)
+                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокоды {promos} и получил {money} монет на счёт в группе {groups_split[0].split(" ")[0]}")
+                                        await bot.send_message(message.chat.id,use_promos,reply_to_message_id=message.id)
+                                    case btn2.callback_data:
+                                        add_money(message.from_user.id,groups_split[1].split(" ")[0],money)
+                                        await bot.delete_message(message.chat.id,mes.id)
+                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокоды {promos} и получил {money} монет на счёт в группе {groups_split[1].split(" ")[0]}")
+                                        await bot.send_message(message.chat.id,use_promos,reply_to_message_id=message.id)
+                        elif len(groups_split)==3:
+                            btn1=types.InlineKeyboardButton(text=groups_split[0].split(" ")[0],callback_data=f"Деньги_{groups_split[0].split(" ")[0]}")
+                            btn2=types.InlineKeyboardButton(text=groups_split[1].split(" ")[0],callback_data=f"Деньги_{groups_split[1].split(" ")[0]}")
+                            btn3=types.InlineKeyboardButton(text=groups_split[2].split(" ")[0],callback_data=f"Деньги_{groups_split[2].split(" ")[0]}")
+                            markup.add(btn1,btn2,btn3)
+                            mes=await bot.send_message(message.chat.id,f"Вы получили {money} монет. Выберите группу в которую будет зачислена награда:\n{groups}",reply_markup=markup,reply_to_message_id=message.id)
+                            @bot.callback_query_handler(lambda call: call.data.startswith('Деньги_'))
+                            async def handle_callback(call):
+                                match call.data:
+                                    case btn1.callback_data:
+                                        add_money(message.from_user.id,groups_split[0].split(" ")[0],money)
+                                        await bot.delete_message(message.chat.id,mes.id)
+                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокоды {promos} и получил {money} монет на счёт в группе {groups_split[0].split(" ")[0]}")
+                                        await bot.send_message(message.chat.id,use_promos,reply_to_message_id=message.id)
+                                    case btn2.callback_data:
+                                        add_money(message.from_user.id,groups_split[1].split(" ")[0],money)
+                                        await bot.delete_message(message.chat.id,mes.id)
+                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокоды {promos} и получил {money} монет на счёт в группе {groups_split[1].split(" ")[0]}")
+                                        await bot.send_message(message.chat.id,use_promos,reply_to_message_id=message.id)
+                                    case btn3.callback_data:
+                                        add_money(message.from_user.id,groups_split[2].split(" ")[0],money)
+                                        await bot.delete_message(message.chat.id,mes.id)
+                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокоды {promos} и получил {money} монет на счёт в группе {groups_split[2].split(" ")[0]}")
+                                        await bot.send_message(message.chat.id,use_promos,reply_to_message_id=message.id)
+                        else:
+                            btn1=types.InlineKeyboardButton(text=groups_split[0].split(" ")[0],callback_data=f"Деньги_{groups_split[0].split(" ")[0]}")
+                            btn2=types.InlineKeyboardButton(text=groups_split[1].split(" ")[0],callback_data=f"Деньги_{groups_split[1].split(" ")[0]}")
+                            btn3=types.InlineKeyboardButton(text=groups_split[2].split(" ")[0],callback_data=f"Деньги_{groups_split[2].split(" ")[0]}")
+                            btn4=types.InlineKeyboardButton(text="Другая",callback_data="Деньги_Другая")
+                            markup.add(btn1,btn2,btn3,btn4)
+                            mes=await bot.send_message(message.chat.id,f"Вы получили {money} монет. Выберите группу в которую будет зачислена награда:\n{groups}",reply_markup=markup,reply_to_message_id=message.id)
+                            @bot.callback_query_handler(lambda call: call.data.startswith('Деньги_'))
+                            async def handle_callback(call):
+                                match call.data:
+                                    case btn1.callback_data:
+                                        add_money(message.from_user.id,groups_split[0].split(" ")[0],money)
+                                        await bot.delete_message(message.chat.id,mes.id)
+                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокоды {promos} и получил {money} монет на счёт в группе {groups_split[0].split(" ")[0]}")
+                                        await bot.send_message(message.chat.id,use_promos,reply_to_message_id=message.id)
+                                    case btn2.callback_data:
+                                        add_money(message.from_user.id,groups_split[1].split(" ")[0],money)
+                                        await bot.delete_message(message.chat.id,mes.id)
+                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокоды {promos} и получил {money} монет на счёт в группе {groups_split[1].split(" ")[0]}")
+                                        await bot.send_message(message.chat.id,use_promos,reply_to_message_id=message.id)
+                                    case btn3.callback_data:
+                                        add_money(message.from_user.id,groups_split[2].split(" ")[0],money)
+                                        await bot.delete_message(message.chat.id,mes.id)
+                                        write_log(f"Пользователь под id {message.from_user.id} активировал промокоды {promos} и получил {money} монет на счёт в группе {groups_split[2].split(" ")[0]}")
+                                        await bot.send_message(message.chat.id,use_promos,reply_to_message_id=message.id)
+                                    case btn4.callback_data:
+                                        await bot.edit_message_text("Введите номер группы в которую зачислите монеты",message.chat.id,mes.id)
+                                        @bot.message_handler(chat_types=['private'])
+                                        async def another_group(message):
+                                            add_money(message.from_user.id,message.text,money)
+                                            await bot.delete_message(message.chat.id,mes.id)
+                                            write_log(f"Пользователь под id {message.from_user.id} активировал промокоды {promos} и получил {money} монет на счёт в группе {message.text}")
+                                            await bot.send_message(message.chat.id,use_promos,reply_to_message_id=message.id)

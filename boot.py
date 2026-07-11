@@ -305,12 +305,13 @@ def update_magazin():
     except Exception as e:
         print(f"Ошибка: {e}")
 
-def add_read(a,b,c,d,e):
+def add_read(a,b,c,d,e,f):
     try:
         table=Table("journal",MetaData(),autoload_with=engine)
         group=search_group(b)
         user=search_info_user(a,b)[0]
-        resp=insert(table).values(Date=e,IdUser=user,GroupUser=group,Type=c,Reason=d)
+        mod=search_info_user(c,b)[0]
+        resp=insert(table).values(Date=f,IdUser=user,GroupUser=group,IdModerator=mod,Type=d,Reason=e)
         with engine.begin() as con:
             con.execute(resp)
     except Exception as e:
@@ -595,7 +596,7 @@ def search_promocode(a):
                     if reward_split[0]=="VIP-статус":
                         match reward_split[1]:
                             case "полтора":
-                                rewards.append([i,False,15])
+                                rewards.append([i,False,45])
                             case _:
                                 if reward_split[2][0]=="д":
                                     rewards.append([i,False,int(reward_split[1])])
