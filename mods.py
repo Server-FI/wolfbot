@@ -65,10 +65,10 @@ def mods(bot):
                                 add_read(banner,message.chat.id,message.from_user.id,"Бан",message.text[4::],datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                 if re.search("бот",message.text.lower())!=None:
                                     add_filter(status_banner.user.id,status_banner.user.username,message.text[4::])
-                                await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://t.me/{status_banner.user.username}) забанен\nПричина: {message.text[4::]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://telegram.me/{status_banner.user.username}) забанен\nПричина: {message.text[4::]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                             else:
                                 add_read(banner,message.chat.id,message.from_user.id,"Бан","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://t.me/{status_banner.user.username}) забанен\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://telegram.me/{status_banner.user.username}) забанен\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                 else:
                     banner=search_username(message.text.split()[1][1::],message.chat.id)
                     status_banner=await bot.get_chat_member(message.chat.id,banner)
@@ -88,10 +88,10 @@ def mods(bot):
                                 add_read(banner,message.chat.id,message.from_user.id,"Бан",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                 if re.search("бот",reason.lower())!=None:
                                     add_filter(status_banner.user.id,status_banner.user.username,reason)
-                                await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://t.me/{status_banner.user.username}) забанен\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://telegram.me/{status_banner.user.username}) забанен\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                             else:
                                 add_read(banner,message.chat.id,message.from_user.id,"Бан","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://t.me/{status_banner.user.username}) забанен\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://telegram.me/{status_banner.user.username}) забанен\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
             case "creator":
                 if message.reply_to_message!=None:
                     banner=message.reply_to_message.from_user.id
@@ -113,10 +113,10 @@ def mods(bot):
                                 add_read(banner,message.chat.id,message.from_user.id,"Бан",message.text[4::],datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                 if re.search("бот",message.text.lower())!=None:
                                     add_filter(status_banner.user.id,status_banner.user.username,message.text[4::])
-                                await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://t.me/{status_banner.user.username}) забанен\nПричина: {message.text[4::]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://telegram.me/{status_banner.user.username}) забанен\nПричина: {message.text[4::]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                             else:
                                 add_read(banner,message.chat.id,message.from_user.id,"Бан","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://t.me/{status_banner.user.username}) забанен\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://telegram.me/{status_banner.user.username}) забанен\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                 else:
                     var=await bot.get_me()
                     if message.text.split()[1][1::]==var.username:
@@ -140,10 +140,10 @@ def mods(bot):
                                     add_read(banner,message.chat.id,message.from_user.id,"Бан",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     if re.search("бот",reason.lower())!=None:
                                         add_filter(status_banner.user.id,status_banner.user.username,reason)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://t.me/{status_banner.user.username}) забанен\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://telegram.me/{status_banner.user.username}) забанен\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(banner,message.chat.id,message.from_user.id,"Бан","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://t.me/{status_banner.user.username}) забанен\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://telegram.me/{status_banner.user.username}) забанен\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
             case "left":
                 if message.reply_to_message!=None:
                     banner=message.reply_to_message.from_user.id
@@ -165,10 +165,10 @@ def mods(bot):
                                     add_read(banner,message.chat.id,message.from_user.id,"Бан",message.text[4::],datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     if re.search("бот",message.text.lower())!=None:
                                         add_filter(status_banner.user.id,status_banner.user.username,message.text[4::])
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://t.me/{status_banner.user.username}) забанен\nПричина: {message.text[4::]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://telegram.me/{status_banner.user.username}) забанен\nПричина: {message.text[4::]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(banner,message.chat.id,message.from_user.id,"Бан","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://t.me/{status_banner.user.username}) забанен\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://telegram.me/{status_banner.user.username}) забанен\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                 else:
                     var=await bot.get_me()
                     if message.text.split()[1][1::]==var.username:
@@ -192,10 +192,10 @@ def mods(bot):
                                     add_read(banner,message.chat.id,message.from_user.id,"Бан",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     if re.search("бот",reason.lower())!=None:
                                         add_filter(status_banner.user.id,status_banner.user.username,reason)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://t.me/{status_banner.user.username}) забанен\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://telegram.me/{status_banner.user.username}) забанен\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(banner,message.chat.id,message.from_user.id,"Бан","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://t.me/{status_banner.user.username}) забанен\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_banner.user.first_name}](https://telegram.me/{status_banner.user.username}) забанен\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
             case _:
                 await bot.send_message(message.chat.id, "Данная команда доступна только администрации и модерации", reply_to_message_id=message.id)
     @bot.message_handler(regexp='Снять блокировку|Remove block',chat_types=["supergroup","group"])
@@ -209,13 +209,13 @@ def mods(bot):
                     match(message.text.split()):
                         case 2:
                             add_read(status_unbaner.user.id,message.chat.id,message.from_user.id,"Снятие бана","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://t.me/{unbaner.user.username}) снят бан\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://telegram.me/{unbaner.user.username}) снят бан\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                         case _:
                             reason=""
                             for i in message.text.split()[2::]:
                                 reason+=i+" "
                             add_read(unbaner.user.id,message.chat.id,message.from_user.id,"Снятие бана",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://t.me/{unbaner.user.username}) снят бан\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://telegram.me/{unbaner.user.username}) снят бан\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                 else:
                     unbaner=search_username(message.text.split()[2][1::],message.chat.id)
                     status_unbaner=await bot.get_chat_member(message.chat.id,unbaner)
@@ -223,14 +223,14 @@ def mods(bot):
                         case 3:
                             add_read(status_unbaner.user.id,message.chat.id,message.from_user.id,"Снятие бана","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                             await bot.unban_chat_member(message.chat.id,unbaner)
-                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://t.me/{unbaner.user.username}) снят бан\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://telegram.me/{unbaner.user.username}) снят бан\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                         case _:
                             reason=""
                             for i in message.text.split()[3::]:
                                 reason+=i+" "
                             add_read(unbaner.user.id,message.chat.id,message.from_user.id,"Снятие бана",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                             await bot.unban_chat_member(message.chat.id,unbaner)
-                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://t.me/{unbaner.user.username}) снят бан\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://telegram.me/{unbaner.user.username}) снят бан\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
             case "creator":
                 if message.reply_to_message!=None:
                     unbaner=message.reply_to_message.from_user.id
@@ -238,13 +238,13 @@ def mods(bot):
                     match(message.text.split()):
                         case 2:
                             add_read(status_unbaner.user.id,message.chat.id,message.from_user.id,"Снятие бана","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://t.me/{unbaner.user.username}) снят бан\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://telegram.me/{unbaner.user.username}) снят бан\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                         case _:
                             reason=""
                             for i in message.text.split()[2::]:
                                 reason+=i+" "
                             add_read(unbaner.user.id,message.chat.id,message.from_user.id,"Снятие бана",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://t.me/{unbaner.user.username}) снят бан\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://telegram.me/{unbaner.user.username}) снят бан\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                 else:
                     unbaner=search_username(message.text.split()[2][1::],message.chat.id)
                     status_unbaner=await bot.get_chat_member(message.chat.id,unbaner)
@@ -252,14 +252,14 @@ def mods(bot):
                         case 3:
                             add_read(status_unbaner.user.id,message.chat.id,message.from_user.id,"Снятие бана","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                             await bot.unban_chat_member(message.chat.id,unbaner)
-                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://t.me/{unbaner.user.username}) снят бан\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://telegram.me/{unbaner.user.username}) снят бан\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                         case _:
                             reason=""
                             for i in message.text.split()[3::]:
                                 reason+=i+" "
                             add_read(unbaner.user.id,message.chat.id,message.from_user.id,"Снятие бана",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                             await bot.unban_chat_member(message.chat.id,unbaner)
-                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://t.me/{unbaner.user.username}) снят бан\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://telegram.me/{unbaner.user.username}) снят бан\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
             case "left":
                 if message.reply_to_message!=None:
                     unbaner=message.reply_to_message.from_user.id
@@ -267,13 +267,13 @@ def mods(bot):
                     match(message.text.split()):
                         case 2:
                             add_read(status_unbaner.user.id,message.chat.id,message.from_user.id,"Снятие бана","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://t.me/{unbaner.user.username}) снят бан\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://telegram.me/{unbaner.user.username}) снят бан\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                         case _:
                             reason=""
                             for i in message.text.split()[2::]:
                                 reason+=i+" "
                             add_read(unbaner.user.id,message.chat.id,message.from_user.id,"Снятие бана",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://t.me/{unbaner.user.username}) снят бан\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://telegram.me/{unbaner.user.username}) снят бан\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                 else:
                     unbaner=search_username(message.text.split()[2][1::],message.chat.id)
                     status_unbaner=await bot.get_chat_member(message.chat.id,unbaner)
@@ -281,14 +281,14 @@ def mods(bot):
                         case 3:
                             add_read(status_unbaner.user.id,message.chat.id,message.from_user.id,"Снятие бана","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                             await bot.unban_chat_member(message.chat.id,unbaner)
-                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://t.me/{unbaner.user.username}) снят бан\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://telegram.me/{unbaner.user.username}) снят бан\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                         case _:
                             reason=""
                             for i in message.text.split()[3::]:
                                 reason+=i+" "
                             add_read(unbaner.user.id,message.chat.id,message.from_user.id,"Снятие бана",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                             await bot.unban_chat_member(message.chat.id,unbaner)
-                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://t.me/{unbaner.user.username}) снят бан\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{unbaner.user.first_name}](https://telegram.me/{unbaner.user.username}) снят бан\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
             case _:
                 await bot.send_message(message.chat.id, "Данная команда доступна только администрации и модерации", reply_to_message_id=message.id)
     @bot.message_handler(regexp='Мут|Mute',chat_types=["supergroup","group"])
@@ -314,28 +314,28 @@ def mods(bot):
                                 if message.text.lower().split()[1][-1]=="с" or message.text.lower().split()[1][-1]=="s":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[1]}",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(seconds=int(message.text.split()[1][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 elif message.text.lower().split()[1][-1]=="м" or message.text.lower().split()[1][-1]=="m":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[1]}",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(minutes=int(message.text.split()[1][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[1]}",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(hours=int(message.text.split()[1][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                             else:
                                 if message.text.lower().split()[1][-1]=="с" or message.text.lower().split()[1][-1]=="s":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[1]}","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(seconds=int(message.text.split()[1][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 elif message.text.lower().split()[1][-1]=="м" or message.text.lower().split()[1][-1]=="m":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[1]}","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(minutes=int(message.text.split()[1][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[1]}","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(hours=int(message.text.split()[1][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                 else:
                     muter=search_username(message.text.split()[1][1::],message.chat.id)
                     status_muter=await bot.get_chat_member(message.chat.id,muter)
@@ -354,28 +354,28 @@ def mods(bot):
                                 if message.text.lower().split()[2][-1]=="с" or message.text.lower().split()[2][-1]=="s":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[2]}",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(seconds=int(message.text.split()[2][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 elif message.text.lower().split()[2][-1]=="м" or message.text.lower().split()[2][-1]=="m":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[2]}",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(minutes=int(message.text.split()[2][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[2]}",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(hours=int(message.text.split()[2][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                             else:
                                 if message.text.lower().split()[2][-1]=="с" or message.text.lower().split()[2][-1]=="s":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[2]}","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(seconds=int(message.text.split()[2][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 elif message.text.lower().split()[2][-1]=="м" or message.text.lower().split()[2][-1]=="m":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[2]}","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(minutes=int(message.text.split()[2][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[2]}","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(hours=int(message.text.split()[2][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
             case "creator":
                 if message.reply_to_message!=None:
                     muter=message.reply_to_message.from_user.id
@@ -395,28 +395,28 @@ def mods(bot):
                                 if message.text.lower().split()[1][-1]=="с" or message.text.lower().split()[1][-1]=="s":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[1]}",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(seconds=int(message.text.split()[1][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 elif message.text.lower().split()[1][-1]=="м" or message.text.lower().split()[1][-1]=="m":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[1]}",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(minutes=int(message.text.split()[1][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[1]}",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(hours=int(message.text.split()[1][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                             else:
                                 if message.text.lower().split()[1][-1]=="с" or message.text.lower().split()[1][-1]=="s":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[1]}","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(seconds=int(message.text.split()[1][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 elif message.text.lower().split()[1][-1]=="м" or message.text.lower().split()[1][-1]=="m":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[1]}","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(minutes=int(message.text.split()[1][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[1]}","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(hours=int(message.text.split()[1][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                 else:
                     muter=search_username(message.text.split()[1][1::],message.chat.id)
                     status_muter=await bot.get_chat_member(message.chat.id,muter)
@@ -435,28 +435,28 @@ def mods(bot):
                                 if message.text.lower().split()[2][-1]=="с" or message.text.lower().split()[2][-1]=="s":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[2]}",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(seconds=int(message.text.split()[2][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 elif message.text.lower().split()[2][-1]=="м" or message.text.lower().split()[2][-1]=="m":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[2]}",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(minutes=int(message.text.split()[2][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[2]}",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(hours=int(message.text.split()[2][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                             else:
                                 if message.text.lower().split()[2][-1]=="с" or message.text.lower().split()[2][-1]=="s":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[2]}","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(seconds=int(message.text.split()[2][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 elif message.text.lower().split()[2][-1]=="м" or message.text.lower().split()[2][-1]=="m":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[2]}","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(minutes=int(message.text.split()[2][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[2]}","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(hours=int(message.text.split()[2][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
             case "left":
                 if message.reply_to_message!=None:
                     muter=message.reply_to_message.from_user.id
@@ -476,28 +476,28 @@ def mods(bot):
                                 if message.text.lower().split()[1][-1]=="с" or message.text.lower().split()[1][-1]=="s":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[1]}",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(seconds=int(message.text.split()[1][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 elif message.text.lower().split()[1][-1]=="м" or message.text.lower().split()[1][-1]=="m":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[1]}",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(minutes=int(message.text.split()[1][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[1]}",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(hours=int(message.text.split()[1][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                             else:
                                 if message.text.lower().split()[1][-1]=="с" or message.text.lower().split()[1][-1]=="s":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[1]}","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(seconds=int(message.text.split()[1][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 elif message.text.lower().split()[1][-1]=="м" or message.text.lower().split()[1][-1]=="m":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[1]}","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(minutes=int(message.text.split()[1][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[1]}","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(hours=int(message.text.split()[1][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[1]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                 else:
                     muter=search_username(message.text.split()[1][1::],message.chat.id)
                     status_muter=await bot.get_chat_member(message.chat.id,muter)
@@ -516,28 +516,28 @@ def mods(bot):
                                 if message.text.lower().split()[2][-1]=="с" or message.text.lower().split()[2][-1]=="s":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[2]}",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(seconds=int(message.text.split()[2][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 elif message.text.lower().split()[2][-1]=="м" or message.text.lower().split()[2][-1]=="m":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[2]}",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(minutes=int(message.text.split()[2][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[2]}",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(hours=int(message.text.split()[2][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                             else:
                                 if message.text.lower().split()[2][-1]=="с" or message.text.lower().split()[2][-1]=="s":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[2]}","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(seconds=int(message.text.split()[2][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 elif message.text.lower().split()[2][-1]=="м" or message.text.lower().split()[2][-1]=="m":
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[2]}","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(minutes=int(message.text.split()[2][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(status_muter.user.id,message.chat.id,message.from_user.id,f"Мут {message.text.lower().split()[2]}","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                                     await bot.restrict_chat_member(message.chat.id,muter,until_date=datetime.now()+timedelta(hours=int(message.text.split()[2][0:-1])),can_send_messages=False)
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://t.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_muter.user.first_name}](https://telegram.me/{status_muter.user.username}) замучен на {message.text.split()[2]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
             case _:
                 await bot.send_message(message.chat.id, "Данная команда доступна только администрации и модерации", reply_to_message_id=message.id)
     @bot.message_handler(regexp='Снять запрет|Remove zapret',chat_types=["supergroup","group"])
@@ -553,14 +553,14 @@ def mods(bot):
                         case 2:
                             add_read(status_unmuter.user.id,message.chat.id,message.from_user.id,"Снятие мута","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                             await bot.restrict_chat_member(message.chat.id,unmuter,permissions=info.permissions)
-                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://t.me/{status_unmuter.user.username}) размучен\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://telegram.me/{status_unmuter.user.username}) размучен\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                         case _:
                             reason=""
                             for i in message.text.split()[2::]:
                                 reason+=i+" "
                             add_read(status_unmuter.user.id,message.chat.id,message.from_user.id,"Снятие мута",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                             await bot.restrict_chat_member(message.chat.id,unmuter,permissions=info.permissions)
-                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://t.me/{status_unmuter.user.username}) размучен\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://telegram.me/{status_unmuter.user.username}) размучен\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                 else:
                     unmuter=search_username(message.text.split()[2][1::],message.chat.id)
                     status_unmuter=await bot.get_chat_member(message.chat.id,unmuter)
@@ -568,14 +568,14 @@ def mods(bot):
                         case 3:
                             add_read(status_unmuter.user.id,message.chat.id,message.from_user.id,"Снятие мута","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                             await bot.restrict_chat_member(message.chat.id,unmuter,permissions=info.permissions)
-                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://t.me/{status_unmuter.user.username}) размучен\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://telegram.me/{status_unmuter.user.username}) размучен\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                         case _:
                             reason=""
                             for i in message.text.split()[3::]:
                                 reason+=i+" "
                             add_read(status_unmuter.user.id,message.chat.id,message.from_user.id,"Снятие мута",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                             await bot.restrict_chat_member(message.chat.id,unmuter,permissions=info.permissions)
-                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://t.me/{status_unmuter.user.username}) размучен\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://telegram.me/{status_unmuter.user.username}) размучен\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
             case "creator":
                 info=await bot.get_chat(message.chat.id)
                 if message.reply_to_message!=None:
@@ -585,14 +585,14 @@ def mods(bot):
                         case 2:
                             add_read(status_unmuter.user.id,message.chat.id,message.from_user.id,"Снятие мута","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                             await bot.restrict_chat_member(message.chat.id,unmuter,permissions=info.permissions)
-                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://t.me/{status_unmuter.user.username}) размучен\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://telegram.me/{status_unmuter.user.username}) размучен\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                         case _:
                             reason=""
                             for i in message.text.split()[2::]:
                                 reason+=i+" "
                             add_read(status_unmuter.user.id,message.chat.id,message.from_user.id,"Снятие мута",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                             await bot.restrict_chat_member(message.chat.id,unmuter,permissions=info.permissions)
-                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://t.me/{status_unmuter.user.username}) размучен\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://telegram.me/{status_unmuter.user.username}) размучен\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                 else:
                     unmuter=search_username(message.text.split()[2][1::],message.chat.id)
                     status_unmuter=await bot.get_chat_member(message.chat.id,unmuter)
@@ -600,14 +600,14 @@ def mods(bot):
                         case 3:
                             add_read(status_unmuter.user.id,message.chat.id,message.from_user.id,"Снятие мута","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                             await bot.restrict_chat_member(message.chat.id,unmuter,permissions=info.permissions)
-                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://t.me/{status_unmuter.user.username}) размучен\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://telegram.me/{status_unmuter.user.username}) размучен\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                         case _:
                             reason=""
                             for i in message.text.split()[3::]:
                                 reason+=i+" "
                             add_read(status_unmuter.user.id,message.chat.id,message.from_user.id,"Снятие мута",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                             await bot.restrict_chat_member(message.chat.id,unmuter,permissions=info.permissions)
-                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://t.me/{status_unmuter.user.username}) размучен\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://telegram.me/{status_unmuter.user.username}) размучен\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
             case "left":
                 info=await bot.get_chat(message.chat.id)
                 if message.reply_to_message!=None:
@@ -617,14 +617,14 @@ def mods(bot):
                         case 2:
                             add_read(status_unmuter.user.id,message.chat.id,message.from_user.id,"Снятие мута","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                             await bot.restrict_chat_member(message.chat.id,unmuter,permissions=info.permissions)
-                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://t.me/{status_unmuter.user.username}) размучен\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://telegram.me/{status_unmuter.user.username}) размучен\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                         case _:
                             reason=""
                             for i in message.text.split()[2::]:
                                 reason+=i+" "
                             add_read(status_unmuter.user.id,message.chat.id,message.from_user.id,"Снятие мута",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                             await bot.restrict_chat_member(message.chat.id,unmuter,permissions=info.permissions)
-                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://t.me/{status_unmuter.user.username}) размучен\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://telegram.me/{status_unmuter.user.username}) размучен\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                 else:
                     unmuter=search_username(message.text.split()[2][1::],message.chat.id)
                     status_unmuter=await bot.get_chat_member(message.chat.id,unmuter)
@@ -632,14 +632,14 @@ def mods(bot):
                         case 3:
                             add_read(status_unmuter.user.id,message.chat.id,message.from_user.id,"Снятие мута","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                             await bot.restrict_chat_member(message.chat.id,unmuter,permissions=info.permissions)
-                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://t.me/{status_unmuter.user.username}) размучен\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://telegram.me/{status_unmuter.user.username}) размучен\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                         case _:
                             reason=""
                             for i in message.text.split()[3::]:
                                 reason+=i+" "
                             add_read(status_unmuter.user.id,message.chat.id,message.from_user.id,"Снятие мута",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                             await bot.restrict_chat_member(message.chat.id,unmuter,permissions=info.permissions)
-                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://t.me/{status_unmuter.user.username}) размучен\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"Пользователь [{status_unmuter.user.first_name}](https://telegram.me/{status_unmuter.user.username}) размучен\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
             case _:
                 await bot.send_message(message.chat.id, "Данная команда доступна только администрации и модерации", reply_to_message_id=message.id)
     @bot.message_handler(regexp='Варн|Warn',chat_types=["supergroup","group"])
@@ -664,14 +664,14 @@ def mods(bot):
                             if user_warns==limit:
                                 await bot.ban_chat_member(message.chat.id,user)
                                 add_read(user,message.chat.id,message.from_user.id,"Бан","Максимальное количество предупреждений",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://t.me/{status_user.user.username}) забанен\nПричина: максимальное количество предупреждений\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://telegram.me/{status_user.user.username}) забанен\nПричина: максимальное количество предупреждений\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                             else:
                                 if len(message.text.split())>=2:
                                     add_read(user,message.chat.id,message.from_user.id,"Предупреждение",message.text[5::],datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://t.me/{status_user.user.username}) получил предупреждение\nПричина: {message.text[5::]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://telegram.me/{status_user.user.username}) получил предупреждение\nПричина: {message.text[5::]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(user,message.chat.id,message.from_user.id,"Предупреждение","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://t.me/{status_user.user.username}) получил предупреждение\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://telegram.me/{status_user.user.username}) получил предупреждение\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                 else:
                     user=search_username(message.text.split()[1][1::],message.chat.id)
                     status_user=await bot.get_chat_member(message.chat.id,user)
@@ -689,17 +689,17 @@ def mods(bot):
                             if user_warns==limit:
                                 await bot.ban_chat_member(message.chat.id,user)
                                 add_read(user,message.chat.id,message.from_user.id,"Бан","Максимальное количество предупреждений",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://t.me/{status_user.user.username}) забанен\nПричина: максимальное количество предупреждений\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://telegram.me/{status_user.user.username}) забанен\nПричина: максимальное количество предупреждений\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                             else:
                                 if len(message.text.split())>=2:
                                     reason=""
                                     for i in message.text.split()[2::]:
                                         reason+=i+" "
                                     add_read(user,message.chat.id,message.from_user.id,"Предупреждение",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://t.me/{status_user.user.username}) получил предупреждение\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://telegram.me/{status_user.user.username}) получил предупреждение\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(user,message.chat.id,message.from_user.id,"Предупреждение","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://t.me/{status_user.user.username}) получил предупреждение\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://telegram.me/{status_user.user.username}) получил предупреждение\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
             case "creator":
                 if message.reply_to_message!=None:
                     user=message.reply_to_message.from_user.id
@@ -720,14 +720,14 @@ def mods(bot):
                                 if user_warns==limit:
                                     await bot.ban_chat_member(message.chat.id,user)
                                     add_read(user,message.chat.id,message.from_user.id,"Бан","Максимальное количество предупреждений",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://t.me/{status_user.user.username}) забанен\nПричина: максимальное количество предупреждений\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://telegram.me/{status_user.user.username}) забанен\nПричина: максимальное количество предупреждений\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     if len(message.text.split())>=2:
                                         add_read(user,message.chat.id,message.from_user.id,"Предупреждение",message.text[5::],datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                        await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://t.me/{status_user.user.username}) получил предупреждение\nПричина: {message.text[5::]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                        await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://telegram.me/{status_user.user.username}) получил предупреждение\nПричина: {message.text[5::]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                     else:
                                         add_read(user,message.chat.id,message.from_user.id,"Предупреждение","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                        await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://t.me/{status_user.user.username}) получил предупреждение\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                        await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://telegram.me/{status_user.user.username}) получил предупреждение\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                 else:
                     var=await bot.get_me()
                     if message.text.split()[1][1::]==var.username:
@@ -747,17 +747,17 @@ def mods(bot):
                                 if user_warns==limit:
                                     await bot.ban_chat_member(message.chat.id,user)
                                     add_read(user,message.chat.id,message.from_user.id,"Бан","Максимальное количество предупреждений",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://t.me/{status_user.user.username}) забанен\nПричина: максимальное количество предупреждений\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://telegram.me/{status_user.user.username}) забанен\nПричина: максимальное количество предупреждений\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     if len(message.text.split())>=2:
                                         reason=""
                                         for i in message.text.split()[2::]:
                                             reason+=i+" "
                                         add_read(user,message.chat.id,message.from_user.id,"Предупреждение",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                        await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://t.me/{status_user.user.username}) получил предупреждение\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                        await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://telegram.me/{status_user.user.username}) получил предупреждение\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                     else:
                                         add_read(user,message.chat.id,message.from_user.id,"Предупреждение","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                        await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://t.me/{status_user.user.username}) получил предупреждение\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                        await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://telegram.me/{status_user.user.username}) получил предупреждение\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
             case "left":
                 if message.reply_to_message!=None:
                     user=message.reply_to_message.from_user.id
@@ -776,14 +776,14 @@ def mods(bot):
                             if user_warns==limit:
                                 await bot.ban_chat_member(message.chat.id,user)
                                 add_read(user,message.chat.id,message.from_user.id,"Бан","Максимальное количество предупреждений",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://t.me/{status_user.user.username}) забанен\nПричина: максимальное количество предупреждений\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://telegram.me/{status_user.user.username}) забанен\nПричина: максимальное количество предупреждений\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                             else:
                                 if len(message.text.split())>=2:
                                     add_read(user,message.chat.id,message.from_user.id,"Предупреждение",message.text[5::],datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://t.me/{status_user.user.username}) получил предупреждение\nПричина: {message.text[5::]}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://telegram.me/{status_user.user.username}) получил предупреждение\nПричина: {message.text[5::]}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(user,message.chat.id,message.from_user.id,"Предупреждение","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://t.me/{status_user.user.username}) получил предупреждение\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://telegram.me/{status_user.user.username}) получил предупреждение\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                 else:
                     user=search_username(message.text.split()[1][1::],message.chat.id)
                     status_user=await bot.get_chat_member(message.chat.id,user)
@@ -801,17 +801,17 @@ def mods(bot):
                             if user_warns==limit:
                                 await bot.ban_chat_member(message.chat.id,user)
                                 add_read(user,message.chat.id,message.from_user.id,"Бан","Максимальное количество предупреждений",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://t.me/{status_user.user.username}) забанен\nПричина: максимальное количество предупреждений\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://telegram.me/{status_user.user.username}) забанен\nПричина: максимальное количество предупреждений\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                             else:
                                 if len(message.text.split())>=2:
                                     reason=""
                                     for i in message.text.split()[2::]:
                                         reason+=i+" "
                                     add_read(user,message.chat.id,message.from_user.id,"Предупреждение",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://t.me/{status_user.user.username}) получил предупреждение\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://telegram.me/{status_user.user.username}) получил предупреждение\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                                 else:
                                     add_read(user,message.chat.id,message.from_user.id,"Предупреждение","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://t.me/{status_user.user.username}) получил предупреждение\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                                    await bot.send_message(message.chat.id, f"Пользователь [{status_user.user.first_name}](https://telegram.me/{status_user.user.username}) получил предупреждение\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
             case _:
                 await bot.send_message(message.chat.id, "Данная команда доступна только администрации и модерации", reply_to_message_id=message.id)
     @bot.message_handler(regexp='Снять предупреждение|Remove wurn',chat_types=["supergroup","group"])
@@ -825,26 +825,26 @@ def mods(bot):
                     match(message.text.split()):
                         case 2:
                             add_read(status_unwarner.user.id,message.chat.id,message.from_user.id,"Снятие варна","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://t.me/{status_unwarner.user.username}) снят варн\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://telegram.me/{status_unwarner.user.username}) снят варн\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                         case _:
                             reason=""
                             for i in message.text.split()[2::]:
                                 reason+=i+" "
                             add_read(status_unwarner.user.id,message.chat.id,message.from_user.id,"Снятие варна",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://t.me/{status_unwarner.user.username}) снят варн\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://telegram.me/{status_unwarner.user.username}) снят варн\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                 else:
                     unwarner=search_username(message.text.split()[2][1::],message.chat.id)
                     status_unwarner=await bot.get_chat_member(message.chat.id,unwarner)
                     match(message.text.split()):
                         case 3:
                             add_read(status_unwarner.user.id,message.chat.id,message.from_user.id,"Снятие варна","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://t.me/{status_unwarner.user.username}) снят варн\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://telegram.me/{status_unwarner.user.username}) снят варн\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                         case _:
                             reason=""
                             for i in message.text.split()[3::]:
                                 reason+=i+" "
                             add_read(status_unwarner.user.id,message.chat.id,message.from_user.id,"Снятие варна",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://t.me/{status_unwarner.user.username}) снят варн\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://telegram.me/{status_unwarner.user.username}) снят варн\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
             case "creator":
                 if message.reply_to_message!=None:
                     unwarner=message.reply_to_message.from_user.id
@@ -852,26 +852,26 @@ def mods(bot):
                     match(message.text.split()):
                         case 2:
                             add_read(status_unwarner.user.id,message.chat.id,message.from_user.id,"Снятие варна","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://t.me/{status_unwarner.user.username}) снят варн\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://telegram.me/{status_unwarner.user.username}) снят варн\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                         case _:
                             reason=""
                             for i in message.text.split()[2::]:
                                 reason+=i+" "
                             add_read(status_unwarner.user.id,message.chat.id,message.from_user.id,"Снятие варна",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://t.me/{status_unwarner.user.username}) снят варн\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://telegram.me/{status_unwarner.user.username}) снят варн\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                 else:
                     unwarner=search_username(message.text.split()[2][1::],message.chat.id)
                     status_unwarner=await bot.get_chat_member(message.chat.id,unwarner)
                     match(message.text.split()):
                         case 3:
                             add_read(status_unwarner.user.id,message.chat.id,message.from_user.id,"Снятие варна","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://t.me/{status_unwarner.user.username}) снят варн\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://telegram.me/{status_unwarner.user.username}) снят варн\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                         case _:
                             reason=""
                             for i in message.text.split()[3::]:
                                 reason+=i+" "
                             add_read(status_unwarner.user.id,message.chat.id,message.from_user.id,"Снятие варна",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://t.me/{status_unwarner.user.username}) снят варн\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://telegram.me/{status_unwarner.user.username}) снят варн\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
             case "left":
                 if message.reply_to_message!=None:
                     unwarner=message.reply_to_message.from_user.id
@@ -879,26 +879,26 @@ def mods(bot):
                     match(message.text.split()):
                         case 2:
                             add_read(status_unwarner.user.id,message.chat.id,message.from_user.id,"Снятие варна","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://t.me/{status_unwarner.user.username}) снят варн\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://telegram.me/{status_unwarner.user.username}) снят варн\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                         case _:
                             reason=""
                             for i in message.text.split()[2::]:
                                 reason+=i+" "
                             add_read(status_unwarner.user.id,message.chat.id,message.from_user.id,"Снятие варна",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://t.me/{status_unwarner.user.username}) снят варн\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://telegram.me/{status_unwarner.user.username}) снят варн\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                 else:
                     unwarner=search_username(message.text.split()[2][1::],message.chat.id)
                     status_unwarner=await bot.get_chat_member(message.chat.id,unwarner)
                     match(message.text.split()):
                         case 3:
                             add_read(status_unwarner.user.id,message.chat.id,message.from_user.id,"Снятие варна","Не указана",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://t.me/{status_unwarner.user.username}) снят варн\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://telegram.me/{status_unwarner.user.username}) снят варн\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
                         case _:
                             reason=""
                             for i in message.text.split()[3::]:
                                 reason+=i+" "
                             add_read(status_unwarner.user.id,message.chat.id,message.from_user.id,"Снятие варна",reason,datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://t.me/{status_unwarner.user.username}) снят варн\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://t.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
+                            await bot.send_message(message.chat.id, f"С пользователя [{status_unwarner.user.first_name}](https://telegram.me/{status_unwarner.user.username}) снят варн\nПричина: {reason}\nИнициатор: [{message.from_user.first_name}](https://telegram.me/{message.from_user.username})", parse_mode="Markdown", reply_to_message_id=message.id, disable_web_page_preview = True)
             case _:
                 await bot.send_message(message.chat.id, "Данная команда доступна только администрации и модерации", reply_to_message_id=message.id)
     @bot.message_handler(regexp='Изменить максимум|Change warns',chat_types=["supergroup","group"])
